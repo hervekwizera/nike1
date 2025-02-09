@@ -1,5 +1,6 @@
 import Button from "../components/Button";
 import { arrowRight } from "../assets/icons";
+import { statistics } from "../constants";
 function Hero() {
   return (
     <section
@@ -24,8 +25,19 @@ function Hero() {
             Discover stylish Nike arrivals, quality comfort, and innovation for
             your active life.
           </p>
-          <Button label="Shop now"
-          iconURL={arrowRight}/>
+          <Button label="Shop now" iconURL={arrowRight} />
+          <div
+            className="flex  justify-start 
+            flex-wrap w-full mt-20
+            gap-16"
+          >
+            {statistics.map((stat) => (
+              <div key={stat.label}>
+                <p>{stat.value}</p>
+                <p>{stat.label}</p>
+              </div>
+            ))}
+          </div>
         </h1>
       </div>
     </section>
