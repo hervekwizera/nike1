@@ -1,7 +1,8 @@
 import Button from "../components/Button";
 import { arrowRight } from "../assets/icons";
-import { statistics } from "../constants";
-
+import {shoes,statistics } from "../constants";
+import { bigShoe1 } from "../assets/images";
+import ShoeCard from "../components/ShoeCard";
 function Hero() {
   return (
     <section
@@ -35,6 +36,31 @@ function Hero() {
             <div key={stat.label} className="text-center">
               <p className="text-4xl font-bold text-gray-900">{stat.value}</p>
               <p className="text-lg text-gray-600">{stat.label}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+      <div className="relative flex-1 
+      flex justify-center
+      items-center xl:min-h-screen
+      max-xl:py-40 big-primary
+      big-hero big-cover big-center">
+        <img src={bigShoe1}
+        alt="shoe collection"
+        width={610}
+        height={500}
+        className="object-contain 
+        relative z-10 "
+        />
+        <div className="flex sm:gap-6
+        gap-4 absolute -bottom-[5%] max-sm:px-6">
+          {shoes.map((shoe) =>(
+            <div key={shoe}>
+          <ShoeCard 
+           imgURL={shoe}
+           changeBigShoeImage=
+           {() =>{}}
+          />
             </div>
           ))}
         </div>
