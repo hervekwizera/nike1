@@ -1,9 +1,11 @@
 import Button from "../components/Button";
+import { useState } from "react";
 import { arrowRight } from "../assets/icons";
 import {shoes,statistics } from "../constants";
 import { bigShoe1 } from "../assets/images";
 import ShoeCard from "../components/ShoeCard";
 function Hero() {
+  const [bigShoeImg ,setBigShoeImg] = useState( bigShoe1)
   return (
     <section
       id="home"
@@ -45,7 +47,7 @@ function Hero() {
       items-center xl:min-h-screen
       max-xl:py-40 big-primary
       big-hero big-cover big-center">
-        <img src={bigShoe1}
+        <img src={bigShoeImg}
         alt="shoe collection"
         width={610}
         height={500}
@@ -59,7 +61,9 @@ function Hero() {
           <ShoeCard 
            imgURL={shoe}
            changeBigShoeImage=
-           {() =>{}}
+           {(shoe) =>setBigShoeImg
+            (shoe)}
+            bigShoeImg={bigShoeImg}
           />
             </div>
           ))}
