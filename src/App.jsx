@@ -11,7 +11,7 @@ import Nav from './components/Nav'
        <PopularProducts />
     </section>
     <section className="padding">
-       <SuperQuality />
+      <SuperQuality />
     </section> 
     <section className="padding-x py-10">
        <Services />
